@@ -13,7 +13,7 @@ function enterSite() {
 }
 
 // --- Old Video Posts ---
-const videoSrc = "https://drive.google.com/uc?export=download&id=1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR";
+const videoSrc = "https://www.dropbox.com/scl/fi/ivsbqsdqamoj2y0laqz7v/17569777605Nelh5Lcjh22TQ.mp4?rlkey=nxi7raqp6s1uvzj31czwxq9o6&st=vqcmgd5j&dl=0";
 const oldVideoContainer = document.getElementById("oldVideoPosts");
 
 // إنشاء 3 فيديوهات مكررة
