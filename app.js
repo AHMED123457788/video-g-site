@@ -12,7 +12,7 @@ function enterSite() {
 }
 
 // --- Old Video Posts ---
-const videoSrc = "17569777605Nelh5Lcjh22TQ.mp4"; // ضع رابط Dropbox مباشر هنا
+const videoSrc = "https://vimeo.com/1115868172"; // ضع رابط Dropbox مباشر هنا
 const oldVideoContainer = document.getElementById("oldVideoPosts");
 const oldVideoLinks = document.getElementById("oldVideoLinks");
 
