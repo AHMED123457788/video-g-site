@@ -16,7 +16,7 @@ const videos = [
     id: 'vid3',
     title: 'New Video 2',
     desc: 'الفيديو الثاني',
-    src: 'https://drive.google.com/file/d/1Q7eu8Oar72TiU7epXxOGxc6H8m7Ymk17/view?t=1'
+    src: 'https://drive.google.com/file/d/1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR/view?usp=sharing'
   }
   
 ];
