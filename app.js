@@ -2,12 +2,22 @@
 const ageGate = document.getElementById("ageGate");
 const mainContent = document.getElementById("mainContent");
 
-// --- Old Video Posts ---
-const videoSrc = "https://www.dropbox.com/scl/fi/ivsbqsdqamoj2y0laqz7v/17569777605Nelh5Lcjh22TQ.mp4?rlkey=nxi7raqp6s1uvzj31czwxq9o6&st=vqcmgd5j&dl=0";
-const oldVideoContainer = document.getElementById("oldVideoPosts");
+window.onload = function() {
+  ageGate.style.display = "block";
+};
 
-// إنشاء 3 فيديوهات مكررة
+function enterSite() {
+  ageGate.style.display = "none";
+  mainContent.style.display = "block";
+}
+
+// --- Old Video Posts ---
+const videoSrc = "https://dl.dropboxusercontent.com/s/YOUR_FILE_ID/video.mp4"; // ضع رابط Dropbox مباشر هنا
+const oldVideoContainer = document.getElementById("oldVideoPosts");
+const oldVideoLinks = document.getElementById("oldVideoLinks");
+
 for (let i = 0; i < 3; i++) {
+  // إضافة الفيديو داخل content
   const videoWrapper = document.createElement("div");
   videoWrapper.className = "videoWrapper";
 
@@ -23,4 +33,10 @@ for (let i = 0; i < 3; i++) {
   videoElement.appendChild(source);
   videoWrapper.appendChild(videoElement);
   oldVideoContainer.appendChild(videoWrapper);
+
+  // إضافة الرابط في sidebar تحت Old Video Posts
+  const link = document.createElement("a");
+  link.href = "#";
+  link.textContent = "Old Video " + (i + 1);
+  oldVideoLinks.appendChild(link);
 }
