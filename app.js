@@ -12,20 +12,6 @@ function enterSite() {
 }
 
 // --- Old Video Posts ---
-
-<div class="videoWrapper">
-  <iframe width="640" height="360"
-    src="https://youtu.be/ahbECMmEleQ?si=EJ_kqL6o_UvWSgsv"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-</div>
-
-
-
-
-
 const videoSrc = "https://drive.google.com/file/d/1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR/view?usp=sharing"; // ضع رابط Dropbox مباشر هنا
 const oldVideoContainer = document.getElementById("oldVideoPosts");
 const oldVideoLinks = document.getElementById("oldVideoLinks");
