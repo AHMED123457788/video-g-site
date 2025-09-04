@@ -12,7 +12,7 @@ function enterSite() {
 }
 
 // --- Old Video Posts ---
-const videoSrc = "https://dl.dropboxusercontent.com/s/YOUR_FILE_ID/video.mp4"; // ضع رابط Dropbox مباشر هنا
+const videoSrc = "https://drive.google.com/file/d/1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR/view?usp=sharing"; // ضع رابط Dropbox مباشر هنا
 const oldVideoContainer = document.getElementById("oldVideoPosts");
 const oldVideoLinks = document.getElementById("oldVideoLinks");
 
