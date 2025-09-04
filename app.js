@@ -1,11 +1,16 @@
-// بيانات الفيديوهات (قابل للتعديل لاحقاً)
+// Video Data
 const videos = [
   {
-    id: 'demo1',
-    title: 'فيديو تجريبي: مشهد عام (mp4)',
-    desc: 'فيديو تجريبي لعرض المشغّل',
-    src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-    thumb: 'https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217'
+    id: 'vid1',
+    title: 'New Video 1',
+    desc: 'الفيديو الأول',
+    src: 'https://drive.google.com/uc?export=download&id=1ZwoY_rTYrHYTbkARC5cEumtC_ww5qu8T'
+  },
+  {
+    id: 'vid2',
+    title: 'New Video 2',
+    desc: 'الفيديو الثاني',
+    src: 'https://drive.google.com/uc?export=download&id=1Q7eu8Oar72TiU7epXxOGxc6H8m7Ymk17'
   }
 ];
 
@@ -13,63 +18,39 @@ const videos = [
 const ageGate = document.getElementById('ageGate');
 const allowBtn = document.getElementById('allowBtn');
 const denyBtn = document.getElementById('denyBtn');
+const birthdateInput = document.getElementById('birthdate');
 
-function hideAgeGate(){ if(ageGate) ageGate.style.display = 'none'; }
-function showAgeGate(){ if(ageGate) ageGate.style.display = 'flex'; }
+function hideAgeGate(){ ageGate.style.display='none'; }
+function showAgeGate(){ ageGate.style.display='flex'; }
 
-if (allowBtn) allowBtn.addEventListener('click', ()=>{
-  try{localStorage.setItem('vg_allowed','1')}catch(e){}
+if(localStorage.getItem('vg_allowed')==='1'){ hideAgeGate(); }
+else{ showAgeGate(); }
+
+allowBtn.addEventListener('click', ()=>{
+  const dob = birthdateInput.value;
+  if(!dob){ alert('يرجى إدخال تاريخ الميلاد'); return; }
+  const age = new Date().getFullYear() - new Date(dob).getFullYear();
+  if(age<18){ alert('عذراً! يجب أن يكون عمرك 18 سنة أو أكثر'); return; }
+  localStorage.setItem('vg_allowed','1');
   hideAgeGate();
 });
-if (denyBtn) denyBtn.addEventListener('click', ()=>{
-  window.location.href = 'https://www.google.com';
-});
 
-try{
-  if(localStorage.getItem('vg_allowed') === '1') hideAgeGate();
-  else showAgeGate();
-}catch(e){ showAgeGate(); }
+denyBtn.addEventListener('click', ()=>{ window.location.href='https://www.google.com'; });
 
-// الصفحة الرئيسية
-function renderGrid(){
+// Render Videos
+function renderVideos(){
   const grid = document.getElementById('videosGrid');
-  if(!grid) return;
   grid.innerHTML = '';
-  videos.forEach(v =>{
-    const el = document.createElement('div');
-    el.className = 'card';
-    el.innerHTML = `
-      <a href="/watch.html?id=${v.id}">
-        <img class="thumb" src="${v.thumb}" alt="${v.title}" />
-      </a>
+  videos.forEach(v=>{
+    const card = document.createElement('div');
+    card.className='card';
+    card.innerHTML=`
+      <video controls src="${v.src}"></video>
       <h3>${v.title}</h3>
       <p>${v.desc}</p>
     `;
-    grid.appendChild(el);
+    grid.appendChild(card);
   });
 }
 
-// صفحة المشاهدة
-function getQueryParam(name){
-  const params = new URLSearchParams(window.location.search);
-  return params.get(name);
-}
-function renderWatch(){
-  const id = getQueryParam('id');
-  if(!id) return;
-  const v = videos.find(x=>x.id===id);
-  const area = document.getElementById('videoArea');
-  const meta = document.getElementById('videoMeta');
-  if(!v || !area) return;
-  area.innerHTML = `
-    <div class="card">
-      <video class="player" controls playsinline src="${v.src}"></video>
-    </div>
-  `;
-  meta.innerHTML = `<h2>${v.title}</h2><p>${v.desc}</p>`;
-}
-
-document.addEventListener('DOMContentLoaded', ()=>{
-  renderGrid();
-  renderWatch();
-});
+document.addEventListener('DOMContentLoaded', renderVideos);
