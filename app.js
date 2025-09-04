@@ -11,7 +11,14 @@ const videos = [
     title: 'New Video 2',
     desc: 'الفيديو الثاني',
     src: 'https://drive.google.com/uc?export=download&id=1Q7eu8Oar72TiU7epXxOGxc6H8m7Ymk17'
+  },
+  {
+    id: 'vid3',
+    title: 'New Video 2',
+    desc: 'الفيديو الثاني',
+    src: 'https://drive.google.com/file/d/1ZwoY_rTYrHYTbkARC5cEumtC_ww5qu8T/view?usp=sharing&t=1'
   }
+  
 ];
 
 // Age Gate
