@@ -1,9 +1,9 @@
-// --- Age Gate ---
+// Age Gate
 const ageGate = document.getElementById("ageGate");
 const mainContent = document.getElementById("mainContent");
 
-window.onload = function() {
-  ageGate.style.display = "block";
+window.onload = () => {
+  ageGate.style.display = "flex";
 };
 
 function enterSite() {
@@ -11,32 +11,30 @@ function enterSite() {
   mainContent.style.display = "block";
 }
 
-// --- Old Video Posts ---
-const videoSrc = "https://vimeo.com/1115868172"; // ضع رابط Dropbox مباشر هنا
+// Old Video Posts (Vimeo embed)
+const vimeoEmbedUrl = "https://player.vimeo.com/video/1115868172";
 const oldVideoContainer = document.getElementById("oldVideoPosts");
 const oldVideoLinks = document.getElementById("oldVideoLinks");
 
 for (let i = 0; i < 3; i++) {
-  // إضافة الفيديو داخل content
-  const videoWrapper = document.createElement("div");
-  videoWrapper.className = "videoWrapper";
+  // Embed video
+  const wrapper = document.createElement("div");
+  wrapper.className = "videoWrapper";
 
-  const videoElement = document.createElement("video");
-  videoElement.width = 640;
-  videoElement.height = 360;
-  videoElement.controls = true;
+  const iframe = document.createElement("iframe");
+  iframe.src = vimeoEmbedUrl;
+  iframe.width = 640;
+  iframe.height = 360;
+  iframe.frameBorder = "0";
+  iframe.allow = "autoplay; fullscreen; picture-in-picture";
+  iframe.allowFullscreen = true;
 
-  const source = document.createElement("source");
-  source.src = videoSrc;
-  source.type = "video/mp4";
+  wrapper.appendChild(iframe);
+  oldVideoContainer.appendChild(wrapper);
 
-  videoElement.appendChild(source);
-  videoWrapper.appendChild(videoElement);
-  oldVideoContainer.appendChild(videoWrapper);
-
-  // إضافة الرابط في sidebar تحت Old Video Posts
+  // Add link to sidebar
   const link = document.createElement("a");
   link.href = "#";
-  link.textContent = "Old Video " + (i + 1);
+  link.textContent = `Old Video ${i + 1}`;
   oldVideoLinks.appendChild(link);
 }
