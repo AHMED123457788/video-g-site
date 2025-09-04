@@ -11,7 +11,7 @@ const videos = [
     id: 'vid2',
     title: 'New Video 2',
     desc: 'الفيديو الثاني',
-    src: 'https://1024terabox.com/s/18m0AryDlxlGFFWXBY5m-Zg'
+    src: 'https://drive.google.com/file/d/1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR/view?usp=sharing'
   },
   {
     id: 'vid3',
