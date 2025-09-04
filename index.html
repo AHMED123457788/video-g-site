@@ -1,54 +1,33 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Video G</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Site</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #ageGate { display: none; text-align: center; margin-top: 100px; }
+    #mainContent { display: none; }
+    .videoWrapper { margin-bottom: 20px; }
+  </style>
 </head>
 <body>
 
-<!-- Age Gate -->
-<div id="ageGate" class="age-gate">
-  <div class="age-box">
-    <h1>⚠️ تحذير — المحتوى مخصص للبالغين (+18)</h1>
-    <p>أدخل تاريخ ميلادك للتحقق من سنك:</p>
-    <input type="date" id="birthdate">
-    <div class="age-actions">
-      <button id="denyBtn">لا، غادر</button>
-      <button id="allowBtn">دخول</button>
+  <!-- Age Gate -->
+  <div id="ageGate">
+    <h2>Are you 18 or older?</h2>
+    <button onclick="enterSite()">Yes</button>
+    <button onclick="alert('Access denied')">No</button>
+  </div>
+
+  <!-- Main Content -->
+  <div id="mainContent">
+    <h1>Welcome to Video Site</h1>
+    <div id="oldVideoPosts">
+      <h2>Old Video Posts</h2>
     </div>
   </div>
-</div>
 
-<!-- Header -->
-<header class="site-header">
-  <h1>Video G</h1>
-  <input type="text" id="searchBox" placeholder="بحث...">
-</header>
-
-<!-- Main Container -->
-<div class="main-container">
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h3>القائمة</h3>
-    <ul>
-      <li><a href="#" id="newVideosTab">New Videos</a></li>
-      <li><a href="#">Old Video Posts</a></li>
-      <li><a href="#">Images</a></li>
-    </ul>
-  </aside>
-
-  <!-- Content -->
-  <main class="content">
-    <section id="videosGrid" class="grid"></section>
-  </main>
-</div>
-
-<footer class="site-footer">
-&copy; 2025 Video G — نسخة تجريبية
-</footer>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
