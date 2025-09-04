@@ -3,7 +3,7 @@ const videos = [
    
   {
     title: "News Video",
-    src: "https://1024terabox.com/s/18m0AryDlxlGFFWXBY5m-Zg"
+    src: "https://drive.google.com/file/d/1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR/view"
   }
   
   ,
