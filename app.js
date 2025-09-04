@@ -3,7 +3,7 @@ const videos = [
    
   {
     title: "News Video",
-    src: "https://drive.google.com/uc?export=download&id=1Q7eu8Oar72TiU7epXxOGxc6H8m7Ymk17"
+    src: "https://1024terabox.com/s/18m0AryDlxlGFFWXBY5m-Zg"
   }
   
   ,
@@ -11,7 +11,7 @@ const videos = [
     id: 'vid2',
     title: 'New Video 2',
     desc: 'الفيديو الثاني',
-    src: 'https://drive.google.com/uc?export=download&id=1Q7eu8Oar72TiU7epXxOGxc6H8m7Ymk17'
+    src: 'https://1024terabox.com/s/18m0AryDlxlGFFWXBY5m-Zg'
   },
   {
     id: 'vid3',
