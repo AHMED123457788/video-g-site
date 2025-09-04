@@ -1,93 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Video G</title>
   <style>
     body {
-      margin: 0;
+      margin: 0; padding: 0;
       font-family: Arial, sans-serif;
       background-color: #111;
-      color: #fff;
+      color: #eee;
     }
     #ageGate {
       display: none;
-      text-align: center;
-      margin-top: 100px;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
     }
-    #mainContent {
-      display: none;
+    #ageGate button {
+      margin: 8px;
+      padding: 12px 24px;
+      background: #f59e0b;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #111;
     }
     header {
       background-color: #222;
-      padding: 10px;
+      padding: 15px;
       text-align: center;
     }
-    #searchBar input {
-      width: 50%;
-      padding: 5px;
+    header input {
+      width: 60%;
+      padding: 8px;
       font-size: 16px;
+      border-radius: 4px;
+      border: none;
     }
     #sidebar {
       position: fixed;
-      right: 0;
-      top: 0;
-      width: 200px;
-      height: 100%;
+      top: 0; right: 0;
+      width: 200px; height: 100%;
       background-color: #1a1a1a;
-      padding: 10px;
+      padding: 20px;
+      box-sizing: border-box;
     }
     #sidebar h3 {
       margin-top: 20px;
-      font-size: 18px;
-      border-bottom: 1px solid #555;
+      border-bottom: 1px solid #444;
       padding-bottom: 5px;
     }
-    .videoWrapper {
-      margin: 20px;
+    #sidebar a {
+      display: block;
+      color: #aaa;
+      text-decoration: none;
+      margin: 8px 0;
     }
+    #sidebar a:hover { color: #fff; }
     #content {
       margin-right: 220px;
       padding: 20px;
     }
-    a {
-      color: #aaa;
-      text-decoration: none;
-      display: block;
-      margin: 5px 0;
-    }
-    a:hover {
-      color: #fff;
-    }
+    .videoWrapper { margin-bottom: 20px; }
   </style>
 </head>
 <body>
 
-<!-- Age Gate -->
 <div id="ageGate">
-  <h2>Are you 18 or older?</h2>
-  <button onclick="enterSite()">Yes</button>
-  <button onclick="alert('Access denied')">No</button>
+  <h2>هل أنت 18 سنة أو أكثر؟</h2>
+  <button onclick="enterSite()">نعم، أوافق</button>
+  <button onclick="alert('تم رفض الوصول')">لا</button>
 </div>
 
-<!-- Main Content -->
 <div id="mainContent">
   <header>
     <h1>Video G</h1>
-    <div id="searchBar">
-      <input type="text" placeholder="Search...">
-    </div>
+    <input type="text" placeholder="بحث...">
   </header>
 
   <div id="sidebar">
+    <h3>القائمة</h3>
     <h3>New Video</h3>
     <a href="#">News Video 1</a>
     <a href="#">News Video 2</a>
-
     <h3>Old Video Posts</h3>
     <div id="oldVideoLinks"></div>
-
     <h3>Images</h3>
     <a href="#">Image 1</a>
     <a href="#">Image 2</a>
