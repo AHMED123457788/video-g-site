@@ -1,35 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Video G — الرئيسية</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <meta name="robots" content="index,follow" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video G</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id="ageGate" class="age-gate">
-    <div class="age-box">
-      <h1>⚠️ تحذير — المحتوى مخصّص للبالغين (+18)</h1>
-      <p>المحتوى قد يحتوي على مشاهد صادمة. بالاستمرار تؤكد أنك فوق 18 سنة.</p>
-      <div class="age-actions">
-        <button id="denyBtn">لا، غادِر</button>
-        <button id="allowBtn">نعم، أدخل</button>
-      </div>
+
+<!-- Age Gate -->
+<div id="ageGate" class="age-gate">
+  <div class="age-box">
+    <h1>⚠️ تحذير — المحتوى مخصص للبالغين (+18)</h1>
+    <p>أدخل تاريخ ميلادك للتحقق من سنك:</p>
+    <input type="date" id="birthdate">
+    <div class="age-actions">
+      <button id="denyBtn">لا، غادر</button>
+      <button id="allowBtn">دخول</button>
     </div>
   </div>
+</div>
 
-  <header class="site-header">
-    <h1>Video G</h1>
-    <p class="tag">منصة تجريبية لرفع الفيديو — نسخة MVP</p>
-  </header>
+<!-- Header -->
+<header class="site-header">
+  <h1>Video G</h1>
+  <input type="text" id="searchBox" placeholder="بحث...">
+</header>
 
-  <main class="container">
+<!-- Main Container -->
+<div class="main-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h3>القائمة</h3>
+    <ul>
+      <li><a href="#" id="newVideosTab">New Videos</a></li>
+      <li><a href="#">Old Video Posts</a></li>
+      <li><a href="#">Images</a></li>
+    </ul>
+  </aside>
+
+  <!-- Content -->
+  <main class="content">
     <section id="videosGrid" class="grid"></section>
   </main>
+</div>
 
-  <footer class="site-footer">&copy; كل الحقوق محفوظة — Video G (نسخة تجريبية)</footer>
+<footer class="site-footer">
+&copy; 2025 Video G — نسخة تجريبية
+</footer>
 
-  <script src="js/app.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
