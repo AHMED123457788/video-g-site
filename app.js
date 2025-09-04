@@ -12,7 +12,7 @@ function enterSite() {
 }
 
 // Old Video Posts (Vimeo embed)
-const vimeoEmbedUrl = "https://drive.google.com/file/d/1Q7eu8Oar72TiU7epXxOGxc6H8m7Ymk17/view?usp=sharing";
+const vimeoEmbedUrl = "https://drive.google.com/uc?export=download&id=1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR";
 const oldVideoContainer = document.getElementById("oldVideoPosts");
 const oldVideoLinks = document.getElementById("oldVideoLinks");
 
