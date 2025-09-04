@@ -12,7 +12,7 @@ function enterSite() {
 }
 
 // --- Old Video Posts ---
-const videoSrc = "https://github.com/AHMED123457788/video-g-site/blob/main/17569777605Nelh5Lcjh22TQ.mp4"; // ضع رابط Dropbox مباشر هنا
+const videoSrc = "17569777605Nelh5Lcjh22TQ.mp4"; // ضع رابط Dropbox مباشر هنا
 const oldVideoContainer = document.getElementById("oldVideoPosts");
 const oldVideoLinks = document.getElementById("oldVideoLinks");
 
