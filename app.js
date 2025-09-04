@@ -12,7 +12,7 @@ function enterSite() {
 }
 
 // Old Video Posts (Vimeo embed)
-const vimeoEmbedUrl = "https://seegore.com/man-shoots-his-friend-while-singing-together/";
+const vimeoEmbedUrl = "https://drive.google.com/file/d/1Q7eu8Oar72TiU7epXxOGxc6H8m7Ymk17/view?usp=sharing";
 const oldVideoContainer = document.getElementById("oldVideoPosts");
 const oldVideoLinks = document.getElementById("oldVideoLinks");
 
