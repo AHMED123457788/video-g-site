@@ -16,7 +16,7 @@ const videos = [
     id: 'vid3',
     title: 'New Video 2',
     desc: 'الفيديو الثاني',
-    src: 'https://drive.google.com/file/d/1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR/view?usp=sharing'
+    src: 'https://artlist.io/stock-footage/clip/man-fisherman-hut-lying-down/6525088'
   }
   
 ];
