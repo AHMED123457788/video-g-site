@@ -1,106 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Video G</title>
-  <style>
-    body {
-      margin: 0; padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #eee;
-    }
-    #ageGate {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-    }
-    #ageGate button {
-      margin: 8px;
-      padding: 12px 24px;
-      background: #f59e0b;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      color: #111;
-    }
-    header {
-      background-color: #222;
-      padding: 15px;
-      text-align: center;
-    }
-    header input {
-      width: 60%;
-      padding: 8px;
-      font-size: 16px;
-      border-radius: 4px;
-      border: none;
-    }
-    #sidebar {
-      position: fixed;
-      top: 0; right: 0;
-      width: 200px; height: 100%;
-      background-color: #1a1a1a;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    #sidebar h3 {
-      margin-top: 20px;
-      border-bottom: 1px solid #444;
-      padding-bottom: 5px;
-    }
-    #sidebar a {
-      display: block;
-      color: #aaa;
-      text-decoration: none;
-      margin: 8px 0;
-    }
-    #sidebar a:hover { color: #fff; }
-    #content {
-      margin-right: 220px;
-      padding: 20px;
-    }
-    .videoWrapper { margin-bottom: 20px; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>vedio-g</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Age Gate (يظهر أولاً) -->
+  <div id="ageGate" class="modal">
+    <div class="modal-inner">
+      <h2>⚠️ تحذير — المحتوى مخصص للبالغين (+18)</h2>
+      <p>يرجى التأكيد أنك فوق 18 سنة لدخول الموقع.</p>
+      <div class="age-controls">
+        <label for="birthdate">تاريخ الميلاد (اختياري):</label>
+        <input id="birthdate" type="date">
+      </div>
+      <div class="age-actions">
+        <button id="ageDeny">لا، غادر</button>
+        <button id="ageAccept">نعم — أنا فوق 18</button>
+      </div>
+      <p class="small-muted">بالموافقة أنت مسؤول عن محتوى ما تشاهده.</p>
+    </div>
+  </div>
 
-<div id="ageGate">
-  <h2>هل أنت 18 سنة أو أكثر؟</h2>
-  <button onclick="enterSite()">نعم، أوافق</button>
-  <button onclick="alert('تم رفض الوصول')">لا</button>
-</div>
-
-<div id="mainContent">
-  <header>
-    <h1>Video G</h1>
-    <input type="text" placeholder="بحث...">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-left">
+      <h1 class="site-title">vedio-g</h1>
+    </div>
+    <div class="header-center">
+      <input id="searchInput" class="search" type="search" placeholder="ابحث عن فيديو...">
+    </div>
+    <div class="header-right">
+      <button id="menuToggle" class="three-dots" title="قائمة">⋮</button>
+    </div>
   </header>
 
-  <div id="sidebar">
-    <h3>القائمة</h3>
-    <h3>New Video</h3>
-    <a href="#">News Video 1</a>
-    <a href="#">News Video 2</a>
-    <h3>Old Video Posts</h3>
-    <div id="oldVideoLinks"></div>
-    <h3>Images</h3>
-    <a href="#">Image 1</a>
-    <a href="#">Image 2</a>
-  </div>
+  <!-- Right Nav pane (عرض 30%) -->
+  <aside id="sideNav" class="side-nav" aria-hidden="true">
+    <div class="nav-inner">
+      <h3>التصنيفات</h3>
+      <ul id="categoryList" class="cats">
+        <li data-cat="all" class="active">الكل</li>
+        <li data-cat="18">vedio +18</li>
+        <li data-cat="accident">vedio accident</li>
+        <li data-cat="funny">vedio funny</li>
+        <li data-cat="sensible">vedio sensible</li>
+      </ul>
+      <hr>
+      <h3>خيارات العرض</h3>
+      <div>
+        <label><input type="radio" name="sizeFilter" value="all" checked> كل الجودة</label><br>
+        <label><input type="radio" name="sizeFilter" value="high"> High</label><br>
+        <label><input type="radio" name="sizeFilter" value="medium"> Medium</label><br>
+        <label><input type="radio" name="sizeFilter" value="low"> Low</label>
+      </div>
+    </div>
+  </aside>
 
-  <div id="content">
-    <div id="oldVideoPosts"></div>
-  </div>
-</div>
+  <!-- Main content -->
+  <main id="main" class="main-content">
+    <section class="videos-area">
+      <h2 id="sectionTitle">Old Video Posts</h2>
+      <div id="videosGrid" class="grid"></div>
+    </section>
+  </main>
 
-<script src="app.js"></script>
+  <!-- Template footer (بسيط) -->
+  <footer class="site-footer">© 2025 vedio-g — نسخة تجريبية</footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
