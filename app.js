@@ -1,40 +1,34 @@
-// Age Gate
-const ageGate = document.getElementById("ageGate");
-const mainContent = document.getElementById("mainContent");
+// رابط الفيديو المباشر من Google Drive (بعد التحويل)
+const videoUrl = "https://drive.google.com/uc?export=download&id=1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR";
 
-window.onload = () => {
-  ageGate.style.display = "flex";
-};
-
-function enterSite() {
-  ageGate.style.display = "none";
-  mainContent.style.display = "block";
-}
-
-// Old Video Posts (Vimeo embed)
-const vimeoEmbedUrl = "https://drive.google.com/uc?export=download&id=1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR";
+// تحديد الحاوية الخاصة بالفيديوهات القديمة
 const oldVideoContainer = document.getElementById("oldVideoPosts");
-const oldVideoLinks = document.getElementById("oldVideoLinks");
 
-for (let i = 0; i < 3; i++) {
-  // Embed video
+// إنشاء عنصر فيديو وإضافته للحاوية
+function addOldVideo(title, url) {
   const wrapper = document.createElement("div");
   wrapper.className = "videoWrapper";
 
-  const iframe = document.createElement("iframe");
-  iframe.src = vimeoEmbedUrl;
-  iframe.width = 640;
-  iframe.height = 360;
-  iframe.frameBorder = "0";
-  iframe.allow = "autoplay; fullscreen; picture-in-picture";
-  iframe.allowFullscreen = true;
+  const video = document.createElement("video");
+  video.width = 640;
+  video.height = 360;
+  video.controls = true;
 
-  wrapper.appendChild(iframe);
+  const source = document.createElement("source");
+  source.src = url;
+  source.type = "video/mp4";
+
+  video.appendChild(source);
+  wrapper.appendChild(video);
+
+  const caption = document.createElement("p");
+  caption.textContent = title;
+  wrapper.appendChild(caption);
+
   oldVideoContainer.appendChild(wrapper);
-
-  // Add link to sidebar
-  const link = document.createElement("a");
-  link.href = "#";
-  link.textContent = `Old Video ${i + 1}`;
-  oldVideoLinks.appendChild(link);
 }
+
+// إضافة الفيديو (مكرر 3 مرات للتجربة مثلاً)
+addOldVideo("Old Video 1", videoUrl);
+addOldVideo("Old Video 2", videoUrl);
+addOldVideo("Old Video 3", videoUrl);
