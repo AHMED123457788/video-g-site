@@ -1,75 +1,88 @@
-<!doctype html>
-<html lang="ar">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>vedio-g</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vedio-G</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Age Gate (يظهر أولاً) -->
-  <div id="ageGate" class="modal">
-    <div class="modal-inner">
-      <h2>⚠️ تحذير — المحتوى مخصص للبالغين (+18)</h2>
-      <p>يرجى التأكيد أنك فوق 18 سنة لدخول الموقع.</p>
-      <div class="age-controls">
-        <label for="birthdate">تاريخ الميلاد (اختياري):</label>
-        <input id="birthdate" type="date">
-      </div>
-      <div class="age-actions">
-        <button id="ageDeny">لا، غادر</button>
-        <button id="ageAccept">نعم — أنا فوق 18</button>
-      </div>
-      <p class="small-muted">بالموافقة أنت مسؤول عن محتوى ما تشاهده.</p>
+
+  <!-- Fenêtre +18 -->
+  <div id="ageGate">
+    <div class="age-box">
+      <h2>⚠️ Ce site est réservé aux +18</h2>
+      <button id="btnEnter">Entrer</button>
+      <button id="btnExit">Quitter</button>
     </div>
   </div>
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="header-left">
-      <h1 class="site-title">vedio-g</h1>
-    </div>
-    <div class="header-center">
-      <input id="searchInput" class="search" type="search" placeholder="ابحث عن فيديو...">
-    </div>
-    <div class="header-right">
-      <button id="menuToggle" class="three-dots" title="قائمة">⋮</button>
-    </div>
+  <header>
+    <h1 class="logo">Vedio-G</h1>
+    <div id="menuToggle">&#9776;</div>
   </header>
 
-  <!-- Right Nav pane (عرض 30%) -->
-  <aside id="sideNav" class="side-nav" aria-hidden="true">
-    <div class="nav-inner">
-      <h3>التصنيفات</h3>
-      <ul id="categoryList" class="cats">
-        <li data-cat="all" class="active">الكل</li>
-        <li data-cat="18">vedio +18</li>
-        <li data-cat="accident">vedio accident</li>
-        <li data-cat="funny">vedio funny</li>
-        <li data-cat="sensible">vedio sensible</li>
-      </ul>
-      <hr>
-      <h3>خيارات العرض</h3>
-      <div>
-        <label><input type="radio" name="sizeFilter" value="all" checked> كل الجودة</label><br>
-        <label><input type="radio" name="sizeFilter" value="high"> High</label><br>
-        <label><input type="radio" name="sizeFilter" value="medium"> Medium</label><br>
-        <label><input type="radio" name="sizeFilter" value="low"> Low</label>
-      </div>
-    </div>
-  </aside>
+  <!-- Navigation -->
+  <nav id="sideNav">
+    <ul>
+      <li><a href="#" data-category="sensible">Vidéos sensibles</a></li>
+      <li><a href="#" data-category="18">Vidéos 18+</a></li>
+      <li><a href="#" data-category="drôle">Vidéos drôles</a></li>
+      <li><a href="#" data-category="toutes">Toutes les vidéos</a></li>
+    </ul>
+  </nav>
 
-  <!-- Main content -->
-  <main id="main" class="main-content">
-    <section class="videos-area">
-      <h2 id="sectionTitle">Old Video Posts</h2>
-      <div id="videosGrid" class="grid"></div>
+  <!-- Main Content -->
+  <main>
+    <section id="videoContainer">
+      <h2>Dernières vidéos</h2>
+
+      <!-- Vidéo 1 -->
+      <div class="video-card" data-category="sensible">
+        <iframe src="https://player.vimeo.com/video/1116194265" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <div class="actions">
+          <button class="like">👍</button>
+          <button class="dislike">👎</button>
+        </div>
+      </div>
+
+      <!-- Vidéo 2 -->
+      <div class="video-card" data-category="18">
+        <iframe src="https://player.vimeo.com/video/1116194393" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <div class="actions">
+          <button class="like">👍</button>
+          <button class="dislike">👎</button>
+        </div>
+      </div>
+
+      <!-- Vidéo 3 -->
+      <div class="video-card" data-category="drôle">
+        <video controls width="640">
+          <source src="https://drive.google.com/uc?export=download&id=1Q7eu8Oar72TiU7epXxOGxc6H8m7Ymk17" type="video/mp4">
+          Votre navigateur ne supporte pas la vidéo.
+        </video>
+        <div class="actions">
+          <button class="like">👍</button>
+          <button class="dislike">👎</button>
+        </div>
+      </div>
+
+      <!-- Vidéo 4 -->
+      <div class="video-card" data-category="toutes">
+        <video controls width="640">
+          <source src="https://drive.google.com/uc?export=download&id=1FAsokB11cSc4Fk6b4fVSSZOv2fbZxlkR" type="video/mp4">
+          Votre navigateur ne supporte pas la vidéo.
+        </video>
+        <div class="actions">
+          <button class="like">👍</button>
+          <button class="dislike">👎</button>
+        </div>
+      </div>
+
     </section>
   </main>
 
-  <!-- Template footer (بسيط) -->
-  <footer class="site-footer">© 2025 vedio-g — نسخة تجريبية</footer>
-
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
