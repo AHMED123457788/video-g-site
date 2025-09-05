@@ -1,51 +1,77 @@
-/* أسلوب داكن مستوحى من الصورة المرجعية */
-:root{
-  --bg:#07080a;
-  --panel:#0f1113;
-  --muted:#9aa4b2;
-  --accent:#e11d2d; /* لون أحمر للعنوان */
-  --gold:#f59e0b;
+/* style.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
 }
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);color:#e6eef8}
-.site-header{height:5vh;min-height:50px;background:#000;display:flex;align-items:center;justify-content:space-between;padding:0 16px;box-shadow:0 1px 0 rgba(255,255,255,0.02)}
-.site-title{color:var(--accent);margin:0;font-weight:700;letter-spacing:1px}
-.search{width:40vw;max-width:520px;padding:8px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:#0b0d0f;color:#fff}
-.three-dots{background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer;padding:8px 10px;border-radius:6px}
-.main-content{display:block;padding:18px;min-height:85vh}
-/* side nav (عرض ~30%) */
-.side-nav{position:fixed;top:0;right:-340px;width:320px;height:100%;background:var(--panel);box-shadow:-8px 0 24px rgba(0,0,0,0.6);transition:right .28s ease;padding:18px 16px;z-index:40}
-.side-nav.open{right:0}
-.nav-inner h3{margin:8px 0 12px;padding-bottom:6px;color:var(--muted)}
-.cats{list-style:none;padding:0;margin:0}
-.cats li{padding:8px 10px;border-radius:6px;color:var(--muted);cursor:pointer;margin-bottom:8px}
-.cats li.active{background:rgba(255,255,255,0.03);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:12px}
-/* بطاقة الفيديو */
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-.video-el{width:100%;height:auto;border-radius:8px;background:#000}
-.meta{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
-.title{font-size:15px;color:#fff;margin:0}
-.badge{font-size:12px;padding:4px 8px;border-radius:6px;background:rgba(255,255,255,0.03);color:var(--muted)}
-.controls{display:flex;gap:8px;align-items:center}
-.btn{background:transparent;border:1px solid rgba(255,255,255,0.05);padding:6px 8px;border-radius:6px;color:var(--muted);cursor:pointer}
-.btn:hover{color:#fff;border-color:rgba(255,255,255,0.08)}
-.counter{font-size:13px;color:var(--muted);margin-left:6px}
-.blocked-comments{opacity:0.5}
-/* decoration for “shock” videos */
-.shock{box-shadow:0 0 18px rgba(225,29,45,0.12);border:1px solid rgba(225,29,45,0.18)}
-/* footer */
-.site-footer{padding:12px;text-align:center;color:var(--muted);background:transparent;border-top:1px solid rgba(255,255,255,0.02)}
-/* Modal AgeGate */
-.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:100;background:rgba(0,0,0,0.7)}
-.modal-inner{background:#0b0d0f;padding:20px;border-radius:8px;max-width:420px;text-align:center;border:1px solid rgba(255,255,255,0.03)}
-.age-actions{display:flex;gap:12px;justify-content:center;margin-top:12px}
-.age-actions button{padding:10px 14px;border-radius:6px;border:0;cursor:pointer}
-.age-actions #ageDeny{background:#333;color:#fff}
-.age-actions #ageAccept{background:var(--gold);color:#071021;font-weight:700}
-.small-muted{color:var(--muted);font-size:13px;margin-top:8px}
-@media (max-width:700px){
-  .side-nav{width:100%;right:-100%}
-  .main-content{margin:0;padding:12px}
-  .search{width:60%}
+
+header {
+  background: #000;
+  color: red;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menuToggle {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+#sideNav {
+  width: 250px;
+  background: #222;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+#sideNav ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sideNav ul li {
+  padding: 15px;
+}
+
+#sideNav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.video-card {
+  background: #222;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.actions button {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#ageGate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.age-box {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
