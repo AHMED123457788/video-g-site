@@ -1,5 +1,5 @@
 // رابط الفيديو المباشر من Google Drive (بعد التحويل)
-const videoUrl = "https://videos.watchpeopledie.tv/1757069300ybY3aZwU7ETNzA.mp4";
+const videoUrl = "";
 
 // تحديد الحاوية الخاصة بالفيديوهات القديمة
 const oldVideoContainer = document.getElementById("oldVideoPosts");
